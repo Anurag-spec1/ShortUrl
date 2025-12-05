@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_gradient_background"
+    tools:context=".activities.SplashActivity">
+
+    <View
+        android:id="@+id/particle1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/splash_particle_large"
+        android:alpha="0.15"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="-30dp"/>
+
+    <View
+        android:id="@+id/particle2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/splash_particle_medium"
+        android:alpha="0.12"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="200dp"
+        android:layout_marginStart="-20dp"/>
+
+    <View
+        android:id="@+id/particle3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/splash_particle_small"
+        android:alpha="0.1"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <carbon.widget.FrameLayout
+            android:id="@+id/logoContainer"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@drawable/logo_glow_background"
+            app:carbon_cornerRadius="35dp"
+            app:carbon_elevation="25dp"
+            app:carbon_elevationShadowColor="@color/carbon_purple_500"
+            android:layout_marginBottom="30dp">
+
+            <carbon.widget.FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:background="@drawable/logo_inner_gradient"
+                app:carbon_cornerRadius="30dp">
+
+                <carbon.widget.ImageView
+                    android:id="@+id/logoIcon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_logo_link"
+                    app:carbon_tint="@color/white"/>
+            </carbon.widget.FrameLayout>
+        </carbon.widget.FrameLayout>
+
+        <carbon.widget.TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QuickLink"
+            android:textSize="42sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.08"
+            app:carbon_elevation="6dp"
+            app:carbon_elevationShadowColor="@color/carbon_purple_900"
+            android:layout_marginBottom="8dp"/>
+
+        <carbon.widget.TextView
+            android:id="@+id/tagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shorten • Share • Track"
+            android:textSize="16sp"
+            android:textColor="@color/carbon_purple_200"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.15"
+            android:alpha="0.9"
+            android:layout_marginBottom="50dp"/>
+
+        <LinearLayout
+            android:id="@+id/loadingDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="60dp">
+
+            <View
+                android:id="@+id/dot1"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/loading_dot"
+                android:layout_marginEnd="10dp"/>
+
+            <View
+                android:id="@+id/dot2"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/loading_dot"
+                android:layout_marginEnd="10dp"/>
+
+            <View
+                android:id="@+id/dot3"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/loading_dot"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="@drawable/decorative_line"
+            android:layout_marginBottom="15dp"/>
+
+        <carbon.widget.TextView
+            android:id="@+id/createdByLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CRAFTED WITH 💜 BY"
+            android:textSize="11sp"
+            android:textColor="@color/carbon_grey_400"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp"/>
+
+        <carbon.widget.TextView
+            android:id="@+id/creatorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANURAG"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.2"
+            app:carbon_elevation="4dp"
+            app:carbon_elevationShadowColor="@color/carbon_pink_500"/>
+
+        <carbon.widget.TextView
+            android:id="@+id/versionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version 1.0"
+            android:textSize="11sp"
+            android:textColor="@color/carbon_grey_500"
+            android:fontFamily="sans-serif"
+            android:alpha="0.7"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
+</carbon.widget.RelativeLayout>

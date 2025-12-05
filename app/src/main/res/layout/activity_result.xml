@@ -5,30 +5,300 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/carbon_black_87"
+    android:background="@drawable/gradient_background"
     tools:context=".activities.ResultActivity">
 
+    <View
+        android:id="@+id/particle1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/particle_shape"
+        android:alpha="0.12"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="-20dp"/>
 
-    <carbon.widget.TextView
+    <View
+        android:id="@+id/particle2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/particle_shape"
+        android:alpha="0.1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="-10dp"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        app:carbon_cornerRadius="20dp"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:orientation="vertical"
         android:paddingStart="30dp"
-        android:paddingEnd="30dp"
-        android:clickable="true"
-        app:carbon_elevation="2dp"
-        android:gravity="center_vertical"
-        android:hint="Hello"
-        app:carbon_elevationShadowColor="@color/carbon_red_900"
-        android:textColorHint="@color/carbon_blue_300"
-        android:id="@+id/shortUrlText"
-        android:maxLines="1"
-        android:ellipsize="end"
-        android:textColor="@color/carbon_blue_400"
-        android:fontFamily="sans-serif"/>
+        android:paddingEnd="30dp">
+
+        <carbon.widget.FrameLayout
+            android:id="@+id/successIconContainer"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/success_icon_background"
+            app:carbon_cornerRadius="50dp"
+            app:carbon_elevation="15dp"
+            app:carbon_elevationShadowColor="@color/carbon_green_500"
+            android:layout_marginBottom="25dp">
+
+            <carbon.widget.ImageView
+                android:id="@+id/successIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_check"
+                app:carbon_tint="@color/white"/>
+        </carbon.widget.FrameLayout>
+
+        <carbon.widget.TextView
+            android:id="@+id/successTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="URL Shortened!"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.05"
+            app:carbon_elevation="3dp"
+            app:carbon_elevationShadowColor="@color/carbon_green_900"
+            android:layout_marginBottom="10dp"/>
+
+        <carbon.widget.TextView
+            android:id="@+id/successSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Your short link is ready to share"
+            android:textSize="14sp"
+            android:textColor="@color/carbon_grey_300"
+            android:fontFamily="sans-serif"
+            android:alpha="0.9"
+            android:layout_marginBottom="35dp"/>
+
+        <carbon.widget.FrameLayout
+            android:id="@+id/urlCardContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/url_card_background"
+            app:carbon_cornerRadius="20dp"
+            app:carbon_elevation="12dp"
+            app:carbon_elevationShadowColor="@color/carbon_purple_700"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <carbon.widget.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="YOUR SHORT URL"
+                    android:textSize="11sp"
+                    android:textColor="@color/carbon_purple_300"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="10dp"/>
+
+                <carbon.widget.TextView
+                    android:id="@+id/shortUrlText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://short.url/abc123"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_marginBottom="5dp"/>
+
+                <carbon.widget.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tap to open"
+                    android:textSize="12sp"
+                    android:textColor="@color/carbon_cyan_400"
+                    android:fontFamily="sans-serif"
+                    android:alpha="0.8"/>
+            </LinearLayout>
+
+        </carbon.widget.FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="25dp">
+
+            <carbon.widget.FrameLayout
+                android:id="@+id/btnCopy"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@drawable/copy_button_background"
+                app:carbon_cornerRadius="15dp"
+                app:carbon_elevation="8dp"
+                app:carbon_elevationShadowColor="@color/carbon_blue_500"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <carbon.widget.ImageView
+                        android:id="@+id/copyIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_copy"
+                        app:carbon_tint="@color/white"
+                        android:layout_marginEnd="8dp"/>
+
+                    <carbon.widget.TextView
+                        android:id="@+id/copyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Copy"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+            </carbon.widget.FrameLayout>
+
+            <carbon.widget.FrameLayout
+                android:id="@+id/btnShare"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@drawable/share_button_background"
+                app:carbon_cornerRadius="15dp"
+                app:carbon_elevation="8dp"
+                app:carbon_elevationShadowColor="@color/carbon_pink_500"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <carbon.widget.ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_share"
+                        app:carbon_tint="@color/white"
+                        android:layout_marginEnd="8dp"/>
+
+                    <carbon.widget.TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Share"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+            </carbon.widget.FrameLayout>
+
+        </LinearLayout>
+
+        <carbon.widget.Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Shorten Another URL"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/back_button_background"
+            app:carbon_cornerRadius="15dp"
+            app:carbon_elevation="6dp"
+            app:carbon_elevationShadowColor="@color/carbon_grey_700"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:alpha="0.6">
+
+            <carbon.widget.LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <carbon.widget.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginBottom="3dp"/>
+
+                <carbon.widget.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clicks"
+                    android:textColor="@color/carbon_grey_400"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif"/>
+            </carbon.widget.LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:background="@color/carbon_grey_600"/>
+
+            <carbon.widget.LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <carbon.widget.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Just now"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginBottom="3dp"/>
+
+                <carbon.widget.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Created"
+                    android:textColor="@color/carbon_grey_400"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif"/>
+            </carbon.widget.LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </carbon.widget.RelativeLayout>
